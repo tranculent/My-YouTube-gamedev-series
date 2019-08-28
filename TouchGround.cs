@@ -20,8 +20,9 @@ public class TouchGround : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // randomGravityValue = 1.5f;
-        // randomGravityValue.ToString() = "1.5f"
-        txt1.text = randomGravityValue.ToString();
+        Destroy(gameObject);
+        Debug.Log("Collision's name: " + collision.gameObject.name);
+        string helperText = collision.gameObject.name + " destroyed our human :(";
+        txt1.text = helperText;
     }
 }
